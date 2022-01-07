@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<title>Pepsi Website Landing Page</title>
+</head>
+<body>
+	<section class="sec">
+		<header>
+			<a href=""><img src="img/logo.png" class="logo"></a>
+			<div class="toggleMenu" onclick="menuToggle();"></div>
+			<ul class="navigation">
+				<li><a href="">Home</a></li>
+				<li><a href="">Products</a></li>
+				<li><a href="">What's New</a></li>
+				<li><a href="">Newsletter</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</header>
+
+		<div class="content">
+			<div class="textBox">
+				<h2>That's What<br><span>I Like</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				<a href="">View All Products</a>
+			</div>
+
+			<div class="imgBox">
+				<img src="img/pepsi001.png" class="pepsi">
+			</div>
+		</div>
+
+		<ul class="thumb">
+			<li><img src="img/pepsi001.png" onclick="imgSlider('img/pepsi001.png');changeBgColor('#0062be')"></li>
+			<li><img src="img/pepsi002.png" onclick="imgSlider('img/pepsi002.png');changeBgColor('#e60c2c')"></li>
+			<li><img src="img/pepsi003.png" onclick="imgSlider('img/pepsi003.png');changeBgColor('#1e1e1e')"></li>
+		</ul>
+
+		<ul class="sci">
+			<li><a href=""><img src="img/facebook.png"></a></li>
+			<li><a href=""><img src="img/twitter.png"></a></li>
+			<li><a href=""><img src="img/instagram.png"></a></li>
+		</ul>
+	</section>
+
+
+
+	<script type="text/javascript">
+		// ubah gambar pepsi model saat di klik
+		function imgSlider(anything){
+			document.querySelector('.pepsi').src = anything;
+		}
+
+		// ubah warna background web
+		function changeBgColor(color){
+			const sec = document.querySelector('.sec');
+			sec.style.background = color;
+		}
+
+		// toggle menu
+		function menuToggle(){
+			const toggleMenu = document.querySelector('.toggleMenu');
+			const navigation = document.querySelector('.navigation');
+			toggleMenu.classList.toggle('active');
+			navigation.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>
